@@ -1,0 +1,129 @@
+/* Global Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif; /* Updated font family */
+  background-image: url('unnamed.jpg'); /* Replace 'high_quality_image.jpg' with your chosen background image */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* Fixed background attachment for better visual appeal */
+}
+
+.container {
+  max-width: 1200px; /* Increased container width for larger screens */
+  margin: 0 auto;
+  padding: 20px;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 50px; /* Increased margin for better spacing */
+}
+
+h1 {
+  color: #333;
+  font-size: 3rem; /* Increased font size for better emphasis */
+  margin-bottom: 30px; /* Increased margin for better spacing */
+}
+
+.main-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.card {
+  flex-basis: calc(48% - 20px);
+  padding: 30px; /* Increased padding for better spacing */
+  border-radius: 20px; /* Increased border radius for smoother edges */
+  margin-bottom: 30px;
+  transition: transform 0.3s ease;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Increased box shadow for better depth */
+}
+
+.card:hover {
+  transform: translateY(-10px); /* Increased lift on hover for better interactivity */
+}
+
+.card h2 {
+  font-size: 2.2rem; /* Increased font size for better readability */
+  margin-bottom: 30px; /* Increased margin for better spacing */
+}
+
+.input-container {
+  position: relative;
+}
+
+input[type="text"],
+textarea {
+  width: calc(100% - 40px); /* Increased width for better input spacing */
+  padding: 20px; /* Increased padding for better input spacing */
+  border: 2px solid #ccc; /* Increased border width for better visibility */
+  border-radius: 10px;
+  margin-bottom: 30px;
+  font-size: 1.2rem; /* Increased font size for better readability */
+}
+
+button {
+  padding: 20px 30px; /* Increased padding for better button size */
+  background-color: #ff6f61; /* Updated button color */
+  color: #fff;
+  border: none;
+  border-radius: 50px; /* Adjusted border-radius for smoother edges */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  margin-left: 10px; /* Increased margin for better spacing */
+}
+
+button:hover {
+  background-color: #ff402c; /* Darker shade on hover for better contrast */
+}
+
+.past-entries {
+  flex-basis: 100%;
+  padding: 30px; /* Increased padding for better spacing */
+  border-radius: 20px; /* Increased border radius for smoother edges */
+  margin-top: 30px; /* Increased margin for better spacing */
+}
+
+.past-entries h2 {
+  font-size: 2.2rem; /* Increased font size for better readability */
+  margin-bottom: 30px; /* Increased margin for better spacing */
+}
+
+.view-entries {
+  display: inline-block; /* Adjusted display property for better alignment */
+  text-decoration: none;
+  background-color: orange; /* Changed background color to orange */
+  color: white; /* Changed text color to white */
+  font-size: 1.4rem; /* Increased font size */
+  padding: 10px 20px; /* Added padding for button size */
+  border-radius: 5px; /* Added border radius for rounded corners */
+  border: none; /* Removed border */
+  transition: background-color 0.3s ease; /* Added transition for hover effect */
+  margin-bottom: 5px;
+  margin-top: 5px;
+  margin-left: 450px;
+}
+
+.view-entries:hover {
+  background-color: darkorange; /* Darker shade on hover for better contrast */
+}
+
+/* Font Awesome Icons */
+.fa-pen {
+  margin-right: 10px; /* Increased margin for better spacing */
+}
+
+/* Media Queries for Mobile Responsiveness */
+@media (max-width: 768px) {
+  .card {
+    flex-basis: 100%;
+  }
+}

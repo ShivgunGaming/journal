@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Journal Entries</title>
+  <link rel="stylesheet" type="text/css" href="journal.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Journal Entries</h1>
+    </header>
+    <a href="index.html" class="back-button">Back to Homepage</a>
+    <section class="journal-entries" id="journalEntries">
+      <!-- Journal entries will be displayed here -->
+    </section>
+    <p class="no-entries" id="noEntriesMsg" style="display: none;">No journal entries found.</p>
+  </div>
+  <script src="script.js"></script>
+  <script>
+    function displayJournalEntries() {
+      const journalEntriesDiv = document.getElementById('journalEntries');
+      const noEntriesMsg = document.getElementById('noEntriesMsg');
+      journalEntriesDiv.innerHTML = '';
+      
+      const journalEntries = JSON.parse(localStorage.getItem('journalEntries')) || [];
+
+      if (journalEntries.length === 0) {
+        noEntriesMsg.style.display = 'block';
+        return;
+      }
+
+      noEntriesMsg.style.display = 'none';
+
+      journalEntries.forEach((entry, index) => {
+        const entryDiv = document.createElement('div');
+        entryDiv.classList.add('journal-entry');
+        entryDiv.textContent = `${entry.timestamp}: ${entry.journalEntry}`;
+
+        const deleteButton = document.createElement('button');
+        deleteButton.classList.add('delete-button');
+        deleteButton.textContent = 'Delete';
+        deleteButton.addEventListener('click', () => deleteJournalEntry(index));
+        entryDiv.appendChild(deleteButton);
+
+        journalEntriesDiv.appendChild(entryDiv);
+      });
+    }
+
+    function deleteJournalEntry(index) {
+      let journalEntries = JSON.parse(localStorage.getItem('journalEntries')) || [];
+      journalEntries.splice(index, 1);
+      localStorage.setItem('journalEntries', JSON.stringify(journalEntries));
+      displayJournalEntries();
+    }
+
+    displayJournalEntries();
+  </script>
+</body>
+</html>

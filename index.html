@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mood Tracker</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-ZmX8Jx0OBVki3DjBgze7fwhH8MrwDW7o+fxcaWt+DZCzlmmrKE3z0rHplhaHuPvqoCBMlDAN66ce+s9zi8dPzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Mood Tracker</h1>
+    </header>
+    <section class="main-content">
+      <div class="mood-form card">
+        <h2>Log Your Mood</h2>
+        <label for="mood">How do you feel today?</label>
+        <div class="input-container">
+          <input type="text" id="mood" placeholder="Enter your mood...">
+          <button id="logMoodBtn"><i class="fas fa-pen"></i> Log Mood</button>
+        </div>
+      </div>
+      <div class="journal card">
+        <h2>Journal</h2>
+        <textarea id="journal" placeholder="Write your journal entry here..."></textarea>
+        <button id="logJournalBtn">Log Journal Entry</button>
+      </div>
+    </section>
+    <section class="past-entries card" id="pastEntries">
+      <h2>Past Entries</h2>
+      <div id="entriesContainer"></div> <!-- Added a container for entries -->
+    </section>
+    <a href="journal.html" class="view-entries">View Journal Entries</a>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
